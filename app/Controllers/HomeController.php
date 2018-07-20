@@ -7,11 +7,14 @@ use Psr\Http\Message\{
     ServerRequestInterface as Request,
     ResponseInterface as Response
 };
+use App\Models\User;
 
 class HomeController extends Controller
 {
     public function index(Request $request, Response $response, $args)
     {
+      $user = User::find(1);
+      dump($user);
       return $response->withJson(['works' => true]);
     }
 }
