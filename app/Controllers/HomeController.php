@@ -14,7 +14,9 @@ class HomeController extends Controller
     public function index(Request $request, Response $response, $args)
     {
       $user = User::find(1);
+      echo env('APP_NAME');
       dump($user);
+      die();
       return $response->withJson(['works' => true]);
     }
 }

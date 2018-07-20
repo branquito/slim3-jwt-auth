@@ -15,10 +15,10 @@ $container = $app->getContainer();
 $container->get('settings')->set('displayErrorDetails', true);
 $container->get('settings')->set('db', [
   'driver' => 'mysql',
-  'host' => '127.0.0.1',
-  'username' => 'user',
-  'password' => 'pass',
-  'database' => 'jwt_slim3',
+  'host' => env('DB_HOST'),
+  'username' => env('DB_USER'),
+  'password' => env('DB_PASSWORD'),
+  'database' => env('DB_NAME'),
   'charset' => 'utf8',
   'collation' => 'utf8_unicode_ci'
 ]);
